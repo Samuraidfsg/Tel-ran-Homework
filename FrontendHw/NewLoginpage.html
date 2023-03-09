@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300&display=swap");
+
+      body {
+        font-family: "Lato", sans-serif;
+        font-family: "Roboto", sans-serif;
+        overflow-x: hidden;
+      }
+
+      .logo {
+        height: 15px;
+        margin-top: 4px;
+        margin-bottom: -2px;
+        width: 15px;
+      }
+
+      .Google {
+        border-radius: 15px;
+        width: 300px;
+        padding: 5px;
+        border-color: #e8e8e8;
+        height: 48px;
+        border: solid #e8e8e8;
+        background-color: white;
+      }
+
+      .create {
+        border-radius: 15px;
+        width: 300px;
+        padding: 5px;
+        border-color: #e8e8e8;
+        height: 48px;
+        border: solid #101727;
+        background-color: #101727;
+        color: white;
+      }
+      input {
+        border: 1px solid lightgrey;
+        border-width: 0 0 1px;
+        width: 300px;
+        height: 40px;
+        margin-top: 9px;
+      }
+
+      .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(https://mobimg.b-cdn.net/v3/fetch/2e/2e15ba7a8cf746b2fe8d149066eec0a4.jpeg);
+        background-position: 100%;
+        background-size: cover;
+        width: 70%;
+        height: 100%;
+        color: #fcfbfb;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .right {
+        width: 30%;
+        position: absolute;
+        top: 0;
+        text-align: left;
+        left: 70%;
+        padding-left: 20px;
+        background: white;
+      }
+
+      .have {
+        color: #75787d;
+        font-size: 13px;
+        margin-left: 55px;
+      }
+
+      .in {
+        border: 1px solid lightgrey;
+        border-width: 0 0 1px;
+        color: #474c50;
+      }
+
+      .tesla {
+        width: 219px;
+        height: 30px;
+        margin-left: 70%;
+        margin-top: 0%;
+      }
+
+      .maintalk {
+        display: flex;
+        width: 65%;
+        height: 2%;
+        margin-left: 28%;
+        font-size: xx-large;
+      }
+
+      .Musk {
+        height: 0%;
+        margin-left: 15%;
+        margin-bottom: -12%;
+      }
+
+      .about {
+        width: 28%;
+        margin-bottom: 4%;
+        margin-left: 16%;
+        height: 5%;
+        margin-top: 0%;
+      }
+
+      .trial {
+        color: #888888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <img
+        src="https://cdn.freebiesupply.com/logos/large/2x/spacex-logo-black-and-white.png"
+        alt=""
+        class="tesla"
+      />
+
+      <h1 class="maintalk">
+        "We've been Untitled to kick start every new project and can't imagine
+        working without it."
+      </h1>
+
+      <h2 class="Musk">Elon Musk</h2>
+
+      <p class="about">Founder, CEO and chief engineer of SpaceX</p>
+       
+      
+    </div>
+
+    <div class="right">
+      <h1>Create an account</h1>
+
+      <p class="trial">Let's get started with your 30 day free trial.</p>
+
+      <div class="login">
+        <form action="acc">
+          <p>
+            <input type="text" placeholder="Name" />
+          </p>
+
+          <p>
+            <input type="email" placeholder="Email" />
+          </p>
+
+          <p>
+            <input type="password" placeholder="Password" />
+          </p>
+
+          <p>
+            <button class="create">Create an account</button>
+          </p>
+
+          <p>
+            <button class="Google">
+              <img src="images\google.png" alt="" class="logo" />
+              Sign up with Google
+            </button>
+          </p>
+
+          <p class="have">
+            Already have an account?<a
+              class="in"
+              href="/u/signup/identifier?state=hKFo2SBfbGo4NTg0bTR6WllxemFmNk5LMl9lVHJXcXlybF9IQqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIFc1d2Y0UDJ4S1JkN0RNTlMyZEVlWkRXakh1b2lzbUZwo2NpZNkgVGRKSWNiZTE2V29USHROOTVueXl3aDVFNHlPbzZJdEc"
+              aria-label=""
+            >
+              Log in</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
