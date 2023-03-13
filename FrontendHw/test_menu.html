@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        :root {
+            --sidebar-width: 200px;
+        }
+      aside {
+        width: 200px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: gold;
+        transform: translateX(calc(var(--sidebar-width) * -1));
+        transition: .5s;
+        color: white;
+        text-align: center;
+      }
+
+      .is-open {
+        transform: translateX(0);
+      }
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+
+    <script>
+      function toggLeMenu () {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('is-open');
+      }
+    </script>
+
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h1> Sadam</h1>
+    </aside>
+
+    <main>
+      <div>
+        <h1>About company</h1>
+
+        <button onclick="toggLeMenu()">Menu</button>
+      </div>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+        cupiditate laudantium error pariatur provident quos, qui reiciendis in
+        officia quisquam accusamus? Vel atque similique vitae doloremque nemo
+        mollitia quisquam aliquid dolores vero animi nostrum natus quia earum
+        accusamus sunt voluptates voluptas quaer
+      </p>
+    </main>
+  </body>
+</html>
