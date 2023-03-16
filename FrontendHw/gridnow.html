@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid now</title>
+    <style>
+         * {
+            margin: 0;
+        }
+
+        html,
+        body,
+        .container {
+            height: 100%;
+        }
+
+        header {
+            grid-area: header;
+            background: blue;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background: blue;
+        }
+        
+        main {
+            grid-area: content;
+            background: blue;
+        }
+
+        .banner {
+            grid-area: banner;
+            background: blue;
+        }
+
+        footer {
+            grid-area: footer;
+            background: blue;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 150px 1fr 1fr 150px;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            grid-template-areas: 
+            "header header header header"
+            "sidebar content content banner"
+            "sidebar footer footer footer"
+            ;
+        }
+
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>header</header>
+        <aside>sidebar</aside>
+        <main>content</main>
+        <banner>banner</banner>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

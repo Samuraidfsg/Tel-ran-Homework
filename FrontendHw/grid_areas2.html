@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-        }
-        html,
-        body,
-        .container {
-            height: 100%;
-        }
-        .container {
-         display: grid;
-         grid-template-columns: 150px auto;
-         grid-template-rows: 50px auto 50px;
-         grid-template-areas: 
-         "header header"
-         "sidebar content"
-         "footer footer"
 
-         ;
-         
-         gap: 10px;
-        }
+      * {
+        margin: 0;
+      }
 
-        header {
-            grid-area: header;
-            background: gray;
-        }
+      html,
+      body,
+      .container {
+        height: 100%;
+      }
 
-        aside {
-            grid-area: aside;
-            background: gold;
-        }
+      .container {
+        display: grid;
+        grid-template-columns: 150px auto;
+        grid-template-rows: 50px auto 50px;
+        grid-template-areas:
+          "sidebar header"
+          "sidebar content "
+          "sidebar footer"
+          ;
+        gap: 10px;
+      }
 
-        main {
-            grid-area: content;
-            background: lightblue;
-        }
+      header {
+        grid-area: header;
+        background: gray;
+      }
 
-        footer {
-            grid-area: footer;
-            background: lightgrey;
-        }
+      aside {
+        grid-area: sidebar;
+        background: gold;
+      }
+
+      main {
+        grid-area: content;
+        background: lightblue;
+      }
+
+      footer {
+        grid-area: footer;
+        background: lightgrey;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>header</header>
-        <aside>aside</aside>
-        <main> content</main>
-        <footer>footer</footer>
-        
-
+      <header>header</header>
+      <aside>sidebar</aside>
+      <main>content</main>
+      <footer>footer</footer>
     </div>
-</body>
+  </body>
 </html>
