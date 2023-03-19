@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Disy</title>
-</head>
-<body>
+    <style>
+    .card {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+}
+
+.card .front {
+    background: none;
+        color: #050505;
+  transform: rotateY(0deg);
+}
+
+.card .back {
+    background:none;
+        color: #060606;
+  transform: rotateY(180deg);
+}
+
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+
+
+
+    </style>
+  </head>
+  <body>
     <main>
-        <menu></menu>
-        
+        <div class="card">
+            <div class="front">
+              <p>Mетаекспресіонізм - це</p>
+            </div>
+            <div class="back">
+              <p>“Маніфестація різних сфер творчості. Наші маніфести у всіляких дисциплінах мистецтва грунтуватимуться на цьому матеріалі.”</p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="front">
+              <p>Перше</p>
+            </div>
+            <div class="back">
+              <p>“Культурне просування, що будується на протесті, конфлікті з попкультурою і агресивним маркетингом.”
+            </p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="front">
+              <p>Друге</p>
+            </div>
+            <div class="back">
+              <p>Метаекспресіонізм - творча течія в мистецтві, що охоплює такі дисципліни як: фотографія, музика, література, кіно, спрямоване на вираження суб'єктивних переживань автора, просування зачіпаних творцем тем, шляхів сприйняття та усвідомлення, психологізацію акту творчості, вихід з екзистенційної кризи шляхом творчо-долаючої дії</p>
+            </div>
+          </div>
+          
     </main>
-</body>
+    
+  </body>
 </html>
