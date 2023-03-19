@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metaexpression</title>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Kharkiv Tone 04.10.2020";
+        src: url("fonts/Kharkiv\ Tone\ 04.10.2020.ttf") format("truetype");
+      }
+
+      body {
+        font-family: "Kharkiv Tone 04.10.2020";
+        text-align: center;
+        background: linear-gradient(
+          to right,
+          #410c57,
+          #9e296f,
+          #b270ee,
+          #7749f4,
+          #bb6ef0
+        );
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .text-container {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .animate-text {
+        position: relative;
+        animation: slide-in 4s ease;
+        animation-fill-mode: forwards;
+        display: inline-block;
+        border-bottom: 7px solid rgb(7, 6, 6);
+        padding-bottom: 5px;
+        font-size: xx-large;
+
+        color: #0f0f10;
+      }
+
+      .animate-text2 {
+        position: relative;
+        animation: slide-in 3s ease;
+        animation-fill-mode: forwards;
+        display: inline-block;
+        border-bottom: 7px solid rgb(7, 6, 6);
+        padding-bottom: 5px;
+        font-size: x-large;
+      }
+
+      .animate-text3 {
+        position: relative;
+        animation: slide-in 2s ease;
+        animation-fill-mode: forwards;
+        display: inline-block;
+        border-bottom: 7px solid rgb(7, 6, 6);
+        padding-bottom: 5px;
+        margin-left: 18%;
+        font-size: x-large;
+      }
+
+      @keyframes slide-in {
+        from {
+          left: -100%;
+        }
+        to {
+          left: 0;
+        }
+      }
+
+      .home {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: x-large;
+        border-radius: 50%;
+        background: #0f0f10;
+        color: #7749f4;
+        border: none;
+        padding: 10px;
+      }
+
+      .info {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-size: x-large;
+        border-radius: 50%;
+        background: #0f0f10;
+        color: #7749f4;
+        border: none;
+        padding: 10px;
+      }
+
+      .fire {
+        font-size: x-large;
+        border-radius: 50%;
+        background: #0f0f10;
+        color: #7749f4;
+        border: none;
+        padding: 10px;
+        animation: pulse 1s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .fire {
+          font-size: xxx-large;
+          border-radius: 50%;
+          background: #0f0f10;
+          color: #7749f4;
+          border: none;
+          padding: 10px;
+          top: 583px;
+          position: fixed;
+          animation: pulse 1s infinite;
+          margin-left: -28px;
+        }
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        .logo {
+          height: 150px;
+          width: 150px;
+          margin-top: -36px;
+          opacity: 0;
+          animation: fade-in 1s forwards;
+        }
+
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .animate-text {
+          font-size: larger;
+        }
+      }
+
+      .logo {
+        height: 150px;
+        width: 150px;
+        margin-top: -43px;
+        opacity: 0;
+        animation: fade-in 1s forwards;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="Picsart_22-10-30_15-00-50-933.png" alt="" class="logo" />
+      <div class="text-container">
+        <h3 class="animate-text">Mетаекспресіонізм - це</h3>
+        <h3 class="animate-text2">Перше</h3>
+        <h3 class="animate-text3">Друге</h3>
+      </div>
+      <button class="home"><i class="las la-home"></i></button>
+      <button class="info"><i class="las la-info-circle"></i></button>
+      <button class="fire"><i class="las la-fire"></i></button>
+    </main>
+
+    <script>
+      window.addEventListener("load", function () {
+        document.querySelector(".animate-text").classList.add("animate-text");
+      });
+    </script>
+  </body>
+</html>
