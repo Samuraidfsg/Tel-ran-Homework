@@ -27,11 +27,22 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        background-image: url(https://66.media.tumblr.com/71bbc1dc8782a28f911fc5182b097435/tumblr_ojamhaBRRJ1rt67t1o1_400.gif);
-        background-size: cover;
-        filter: blur(10px);
-        z-index: -1;
+        height: 250%;
+        background: linear-gradient(45deg, #1aabcf, #9532d3, #240b36);
+        background-size: 200% 200%;
+        animation: gradient 5s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       :root {
@@ -76,39 +87,77 @@
         overflow: hidden;
       }
 
-      .animate-text {
+      .card {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card2 {
+        margin-top: -119px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card3 {
+        margin-top: -35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card > div {
         position: relative;
         animation: slide-in 4s ease;
         animation-fill-mode: forwards;
         display: inline-block;
-        border-bottom: 7px solid rgb(7, 6, 6);
+        border-bottom: 7px solid black;
         padding-bottom: 5px;
         font-size: xx-large;
         color: #080808;
         transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
       }
 
-      
-
-      .animate-text2 {
+      .card2 > div {
         position: relative;
-        animation: slide-in 3s ease;
+        animation: slide-in 4s ease;
         animation-fill-mode: forwards;
         display: inline-block;
-        border-bottom: 7px solid rgb(7, 6, 6);
+        border-bottom: 7px solid black;
         padding-bottom: 5px;
-        font-size: x-large;
+        font-size: xx-large;
+        color: #080808;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+        top: 27px;
       }
 
-      .animate-text3 {
+      .card3 > div {
         position: relative;
-        animation: slide-in 2s ease;
+        animation: slide-in 4s ease;
         animation-fill-mode: forwards;
         display: inline-block;
-        border-bottom: 7px solid rgb(7, 6, 6);
+        border-bottom: 7px solid black;
         padding-bottom: 5px;
-        margin-left: 18%;
-        font-size: x-large;
+        font-size: xx-large;
+        color: #080808;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
       }
 
       @keyframes slide-in {
@@ -118,6 +167,76 @@
         to {
           left: 0;
         }
+      }
+
+      .card .front {
+        background: none;
+        color: #050505;
+        transform: rotateY(0deg);
+        font-size: medium;
+        top: -10px;
+      }
+
+      .card .back {
+        background: none;
+        color: #060606;
+        transform: rotateY(180deg);
+        top: -73px;
+        font-size: medium;
+      }
+
+      .card:hover .front {
+        transform: rotateY(180deg);
+      }
+
+      .card:hover .back {
+        transform: rotateY(0deg);
+      }
+
+      .card2 .front {
+        background: none;
+        color: #050505;
+        transform: rotateY(0deg);
+        font-size: medium;
+      }
+
+      .card2 .back {
+        background: none;
+        color: #060606;
+        transform: rotateY(180deg);
+        top: -15px;
+        font-size: medium;
+      }
+
+      .card2:hover .front {
+        transform: rotateY(180deg);
+      }
+
+      .card2:hover .back {
+        transform: rotateY(0deg);
+      }
+
+      .card3 .front {
+        background: none;
+        color: #050505;
+        transform: rotateY(0deg);
+        font-size: medium;
+      }
+
+      .card3 .back {
+        background: none;
+        color: #060606;
+        transform: rotateY(180deg);
+        top: -60px;
+        font-size: medium;
+      }
+
+      .card3:hover .front {
+        transform: rotateY(180deg);
+      }
+
+      .card3:hover .back {
+        transform: rotateY(0deg);
       }
 
       .home {
@@ -134,33 +253,10 @@
         padding: 2px;
       }
 
-      @media (max-width: 768px) {
-        .logo {
-          height: 150px;
-          width: 150px;
-          margin-top: 80px;
-          opacity: 0;
-          animation: fade-in 5s forwards;
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        .animate-text {
-          font-size: larger;
-        }
-      }
-
       .logo {
         height: 150px;
         width: 150px;
-        margin-top: -43px;
+        margin-top: -3px;
         opacity: 0;
         animation: fade-in 5s forwards;
       }
@@ -180,27 +276,197 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin-left: 17px;
+      }
+
+      @media screen and (max-width: 600px) {
+        /* стили для мобильной версии */
+        .card .front {
+          font-size: larger;
+        }
+
+        .card .back {
+          top: -70px;
+          font-size: larger;
+        }
+
+        .card2 .front {
+          font-size: larger;
+        }
+
+        .card2 .back {
+          font-size: larger;
+          top: -70px;
+        }
+
+        .card3 .front {
+          font-size: larger;
+        }
+
+        .card3 .back {
+          font-size: larger;
+          top: -70px;
+        }
+
+        body::before {
+          height: 110%;
+        }
+
+        .card3 > div {
+          position: relative;
+          animation: slide-in 4s ease;
+          animation-fill-mode: forwards;
+          display: inline-block;
+          margin-left: 19%;
+        }
+      }
+
+      .fr {
+        color: #fff;
+      }
+
+      .fr:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .tw {
+        color: #fff;
+      }
+
+      .tw:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .tr {
+        color: #fff;
+      }
+
+      .tr:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .f4 {
+        color: #fff;
+      }
+
+      .f4:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
       }
     </style>
   </head>
   <body>
     <main>
       <img src="Picsart_22-10-30_15-00-50-933.png" alt="" class="logo" />
-      <div class="text-container">
-        <h3 class="animate-text">Mетаекспресіонізм - це</h3>
-        <h3 class="animate-text2">Перше</h3>
-        <h3 class="animate-text3">Друге</h3>
+
+      <div class="card">
+        <div class="front">
+          <p>Mетаекспресіонізм - це</p>
+        </div>
+        <div class="back">
+          <p>
+            “Маніфестація різних сфер творчості. Наші маніфести у всіляких
+            дисциплінах мистецтва грунтуватимуться на цьому матеріалі.”
+          </p>
+        </div>
       </div>
+
+      <div class="card2">
+        <div class="front">
+          <p>Перше</p>
+        </div>
+        <div class="back">
+          <p>
+            “Культурне просування, що будується на протесті, конфлікті з
+            попкультурою і агресивним маркетингом.”
+          </p>
+        </div>
+      </div>
+
+      <div class="card3">
+        <div class="front">
+          <p>Друге</p>
+        </div>
+        <div class="back">
+          <p>
+            Метаекспресіонізм - творча течія в мистецтві, що охоплює такі
+            дисципліни як: фотографія, музика, література, кіно, спрямоване на
+            вираження суб'єктивних переживань автора, просування зачіпаних
+            творцем тем, шляхів сприйняття та усвідомлення, психологізацію акту
+            творчості, вихід з екзистенційної кризи шляхом творчо-долаючої дії
+          </p>
+        </div>
+      </div>
+
       <aside class="sidebar">
         <div class="insidemenu">
-          <h1>Галерея</h1>
-          <h1>Соц.мережи</h1>
-          <h1>Маніфести</h1>
-          <h1>Культурний наліт</h1>
+          <h1 class="fr">Галерея</h1>
+          <h1 class="tw">Соц.мережі</h1>
+          <h1 class="tr">Маніфести</h1>
+          <h1 class="f4">Статі</h1>
         </div>
       </aside>
-      <button onclick="toggLeMenu()" class="home">
-        <i class="las la-bars"></i>
+      <button onclick="toggleMenu()" class="home">
+        <i id="menu-icon" class="las la-bars"></i>
       </button>
     </main>
 
@@ -210,10 +476,46 @@
       });
       function toggLeMenu() {
         const sidebar = document.querySelector(".sidebar");
-        sidebar.classList.toggle("is-open"); 
+        sidebar.classList.toggle("is-open");
       }
 
-        
+      function toggleMenu() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("is-open");
+        var icon = document.getElementById("menu-icon");
+        if (icon.classList.contains("la-bars")) {
+          icon.classList.remove("la-bars");
+          icon.classList.add("la-times");
+        } else {
+          icon.classList.remove("la-times");
+          icon.classList.add("la-bars");
+        }
+      }
+
+      const card = document.querySelector(".card");
+      const otherElement1 = document.querySelector(".card2");
+      const otherElement2 = document.querySelector(".card3");
+
+      card.addEventListener("mouseover", () => {
+        otherElement1.style.transform = "translateY(100px)";
+        otherElement2.style.transform = "translateY(100px)";
+      });
+
+      card.addEventListener("mouseout", () => {
+        otherElement1.style.transform = "translateY(0)";
+        otherElement2.style.transform = "translateY(0)";
+      });
+
+      const card2 = document.querySelector(".card2");
+      const card3 = document.querySelector(".card3");
+
+      card2.addEventListener("mouseover", () => {
+        card3.style.transform = "translateY(100px)";
+      });
+
+      card2.addEventListener("mouseout", () => {
+        card3.style.transform = "translateY(0)";
+      });
     </script>
   </body>
 </html>
