@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Матеріали</title>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+
+    <style>
+       @font-face {
+        font-family: "Kharkiv Tone 04.10.2020";
+        src: url("fonts/Kharkiv\ Tone\ 04.10.2020.ttf") format("truetype");
+      }
+
+      body {
+        font-family: "Kharkiv Tone 04.10.2020";
+        text-align: center;
+      
+        width: 100%;
+        height: 115%;
+        background: linear-gradient(45deg, #1aabcf, #9532d3, #240b36);
+        background-size: 200% 200%;
+        animation: gradient 5s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      
+      .material-container {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        margin-left: 39%;
+        font-size: x-large;
+        position: absolute;
+        
+      }
+
+      .materials {
+        margin-left: -18px;
+        font-size: xx-large;
+      }
+
+      .statyie {
+       margin-left: -121%;
+       margin-top: 17%;
+       color: black;
+       
+      }
+
+      .statyie:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+        color: #fff;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+
+      .moneyfest {
+        margin-left: 74%;
+        margin-top: -8%;
+        color: black;
+        
+      }
+
+      .moneyfest:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+        color: #fff;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      :root {
+        --sidebar-width: 200px;
+      }
+      aside {
+        width: 200px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: translateX(calc(var(--sidebar-width) * -1));
+        transition: 0.5s;
+        color: white;
+        text-align: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      }
+
+      aside:before {
+        filter: blur(5px);
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+        z-index: -1;
+      }
+
+      .is-open {
+        transform: translateX(0);
+      }
+
+      .text-container {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .home {
+        position: fixed;
+        top: 10px;
+        left: 12px;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-size: x-large;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 2px;
+      }
+
+      .insidemenu {
+        top: 22%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 17px;
+      }
+
+
+      .fr {
+        color: #fff;
+      }
+
+      .fr:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+
+      }
+
+      .tw {
+        color: #fff;
+      }
+
+      .tw:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .tr {
+        color: #fff;
+      }
+
+      .tr:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .f4 {
+        color: #fff;
+      }
+
+      .f4:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+
+
+
+      }
+
+      a:-webkit-any-link {
+        text-decoration-line: none;
+      }
+
+      @media screen and (max-width: 600px) {
+         .material-container {
+           font-size: larger;
+           margin-top: 70%;
+           margin-left: 25%;
+         }
+      }
+
+
+       .podcast {
+        margin-top: 10%;
+        color:black;
+       }
+
+       .podcast:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+        color: #fff;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      
+      
+      
+
+        </style>
+  </head>
+  <body>
+    <div class="material-container">
+      <div class="materials">
+        <i class="las la-book"></i>Матеріали<i class="las la-book"></i>
+      </div>
+    
+      <a href="statyie.html"><div class="statyie">
+        Статті
+      </div></a>
+
+      <a href="manifests.html"><div class="moneyfest">Маніфести
+    </div></a>
+
+
+      <a href="https://soundcloud.com/user-963629578/sets/podkasty-metaekspressionizma?ref=clipboard&p=a&c=1&si=d708347307ca4e9f82a9ac78cfb85462&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"><div class="podcast">Подкасти</div></a>
+    </div>
+    <aside class="sidebar">
+      <div class="insidemenu">
+        <a href="metapage.html"><h1 class="f4">Головна</h1></a>
+        <a href="gallery.html"><h1 class="fr">Галерея</h1></a>
+        <a href="https://mssg.me/metaexpressionism"><h1 class="tw">Соц.мережі</h1></a>
+        <a href="material.html"><h1 class="tr">Матеріали</h1></a>
+      </div>
+    </aside>
+    <button onclick="toggleMenu()" class="home">
+      <i id="menu-icon" class="las la-bars"></i>
+    </button>
+    <script>
+      window.addEventListener("load", function () {
+        document.querySelector(".animate-text").classList.add("animate-text");
+      });
+    
+      function toggleMenu() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("is-open");
+        var icon = document.getElementById("menu-icon");
+        if (icon.classList.contains("la-bars")) {
+          icon.classList.remove("la-bars");
+          icon.classList.add("la-times");
+        } else {
+          icon.classList.remove("la-times");
+          icon.classList.add("la-bars");
+        }
+    
+        // Объявляем переменные menu и button
+        const menu = document.querySelector('.sidebar');
+        const button = document.querySelector('.home');
+    
+        // Добавляем обработчик клика на весь документ
+        document.addEventListener('click', (event) => {
+          const isClickInsideMenu = menu.contains(event.target);
+          const isClickInsideButton = button.contains(event.target);
+    
+          // Если клик произошел вне меню и кнопки, и меню открыто, то закрываем его
+          if (!isClickInsideMenu && !isClickInsideButton && menu.classList.contains('is-open')) {
+            menu.classList.remove('is-open');
+            icon.classList.remove("la-times");
+            icon.classList.add("la-bars");
+          }
+        });
+      }
+
+      const container = document.querySelector('.container');
+const btn1 = document.querySelector('#btn1');
+const list1 = document.querySelector('#list1');
+const btn2 = document.querySelector('#btn2');
+const list2 = document.querySelector('#list2');
+
+btn1.addEventListener('click', function() {
+  list1.classList.toggle('visible');
+});
+
+btn2.addEventListener('click', function() {
+  list2.classList.toggle('visible');
+});
+
+container.addEventListener('click', function(event) {
+  if (!list1.contains(event.target) && !btn1.contains(event.target)) {
+    list1.classList.remove('visible');
+  }
+  if (!list2.contains(event.target) && !btn2.contains(event.target)) {
+    list2.classList.remove('visible');
+  }
+});
+     
+    </script>
+  </body>
+</html>

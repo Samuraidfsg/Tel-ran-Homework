@@ -11,7 +11,7 @@
     />
 
     <style>
-      @font-face {
+          @font-face {
         font-family: "Kharkiv Tone 04.10.2020";
         src: url("fonts/Kharkiv\ Tone\ 04.10.2020.ttf") format("truetype");
       }
@@ -465,41 +465,56 @@
           </p>
         </div>
       </div>
-
       <aside class="sidebar">
         <div class="insidemenu">
           <a href="metapage.html"><h1 class="f4">Головна</h1></a>
           <a href="gallery.html"><h1 class="fr">Галерея</h1></a>
           <a href="https://mssg.me/metaexpressionism"><h1 class="tw">Соц.мережі</h1></a>
-          <h1 class="tr">Матеріали</h1></a>
+          <a href="material.html"><h1 class="tr">Матеріали</h1></a>
         </div>
       </aside>
       <button onclick="toggleMenu()" class="home">
         <i id="menu-icon" class="las la-bars"></i>
       </button>
-    </main>
-
-    <script>
-      window.addEventListener("load", function () {
-        document.querySelector(".animate-text").classList.add("animate-text");
-      });
-      function toggLeMenu() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.classList.toggle("is-open");
-      }
-
-      function toggleMenu() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.classList.toggle("is-open");
-        var icon = document.getElementById("menu-icon");
-        if (icon.classList.contains("la-bars")) {
-          icon.classList.remove("la-bars");
-          icon.classList.add("la-times");
-        } else {
-          icon.classList.remove("la-times");
-          icon.classList.add("la-bars");
+      <script>
+        window.addEventListener("load", function () {
+          document.querySelector(".animate-text").classList.add("animate-text");
+        });
+      
+        function toggleMenu() {
+          const sidebar = document.querySelector(".sidebar");
+          sidebar.classList.toggle("is-open");
+          var icon = document.getElementById("menu-icon");
+          if (icon.classList.contains("la-bars")) {
+            icon.classList.remove("la-bars");
+            icon.classList.add("la-times");
+          } else {
+            icon.classList.remove("la-times");
+            icon.classList.add("la-bars");
+          }
+      
+          // Объявляем переменные menu и button
+          const menu = document.querySelector('.sidebar');
+          const button = document.querySelector('.home');
+      
+          // Добавляем обработчик клика на весь документ
+          document.addEventListener('click', (event) => {
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickInsideButton = button.contains(event.target);
+      
+            // Если клик произошел вне меню и кнопки, и меню открыто, то закрываем его
+            if (!isClickInsideMenu && !isClickInsideButton && menu.classList.contains('is-open')) {
+              menu.classList.remove('is-open');
+              icon.classList.remove("la-times");
+              icon.classList.add("la-bars");
+            }
+          });
         }
-      }
+      
+      
+
+      
+
 
       const card = document.querySelector(".card");
       const otherElement1 = document.querySelector(".card2");
