@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wawe</title>
+
+
+    <style>
+          @font-face {
+        font-family: "Kharkiv Tone 04.10.2020";
+        src: url("fonts/Kharkiv\ Tone\ 04.10.2020.ttf") format("truetype");
+      }
+
+      body {
+        font-family: "Kharkiv Tone 04.10.2020";
+        text-align: center;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 115%;
+        background: linear-gradient(45deg, #1aabcf, #9532d3, #240b36);
+        background-size: 200% 200%;
+        animation: gradient 5s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      :root {
+        --sidebar-width: 200px;
+      }
+      aside {
+        width: 200px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: translateX(calc(var(--sidebar-width) * -1));
+        transition: 0.5s;
+        color: white;
+        text-align: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      }
+
+      aside:before {
+        filter: blur(5px);
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+        z-index: -1;
+      }
+
+      .is-open {
+        transform: translateX(0);
+      }
+
+      .text-container {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card2 {
+        margin-top: -110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card3 {
+        margin-top: -26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card > div {
+        position: relative;
+        animation: slide-in 2s ease;
+        animation-fill-mode: forwards;
+        display: inline-block;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
+        font-size: xx-large;
+        color: #080808;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+      }
+
+      .card2 > div {
+        position: relative;
+        animation: slide-in 2.5s ease;
+        animation-fill-mode: forwards;
+        display: inline-block;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
+        font-size: xx-large;
+        color: #080808;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+        top: 27px;
+      }
+
+      .card3 > div {
+        position: relative;
+        animation: slide-in 3s ease;
+        animation-fill-mode: forwards;
+        display: inline-block;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
+        font-size: xx-large;
+        color: #080808;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+      }
+
+      @keyframes slide-in {
+        from {
+          left: -100%;
+        }
+        to {
+          left: 0;
+        }
+      }
+
+      .card .front {
+        background: none;
+        color: #050505;
+        transform: rotateY(0deg);
+        font-size: medium;
+        top: -17px;
+      }
+
+      .card .back {
+        background: none;
+        color: #060606;
+        transform: rotateY(180deg);
+        top: -73px;
+        font-size: medium;
+      }
+
+      .card:hover .front {
+        transform: rotateY(180deg);
+      }
+
+      .card:hover .back {
+        transform: rotateY(0deg);
+      }
+
+      .card2 .front {
+        background: none;
+        color: #050505;
+        transform: rotateY(0deg);
+        font-size: medium;
+      }
+
+      .card2 .back {
+        background: none;
+        color: #060606;
+        transform: rotateY(180deg);
+        top: -15px;
+        font-size: medium;
+      }
+
+      .card2:hover .front {
+        transform: rotateY(180deg);
+      }
+
+      .card2:hover .back {
+        transform: rotateY(0deg);
+      }
+
+      .card3 .front {
+        background: none;
+        color: #050505;
+        transform: rotateY(0deg);
+        font-size: medium;
+      }
+
+      .card3 .back {
+        background: none;
+        color: #060606;
+        transform: rotateY(180deg);
+        top: -60px;
+        font-size: medium;
+      }
+
+      .card3:hover .front {
+        transform: rotateY(180deg);
+      }
+
+      .card3:hover .back {
+        transform: rotateY(0deg);
+      }
+
+      .home {
+        position: fixed;
+        top: 10px;
+        left: 12px;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-size: x-large;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 2px;
+      }
+
+      .logo {
+        height: 150px;
+        width: 150px;
+        margin-top: -3px;
+        opacity: 0;
+        animation: fade-in 5s forwards;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .insidemenu {
+        top: 22%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 17px;
+      }
+
+      @media screen and (max-width: 600px) {
+        /* стили для мобильной версии */
+        .card .front {
+          font-size: x-large;
+          top: 53px;
+          transform: rotateY(332deg);
+        }
+
+        .card .back {
+          top: -70px;
+          font-size: x-large;
+        }
+
+        .card2 .front {
+          font-size: larger;
+        }
+
+        .card2 .back {
+          font-size: larger;
+          top: -70px;
+        }
+
+        .card3 .front {
+          font-size: larger;
+        }
+
+        .card3 .back {
+          font-size: larger;
+          top: -70px;
+        }
+
+        body::before {
+          height: 136%;
+        }
+
+        .card3 > div {
+          position: relative;
+          animation: slide-in 3s ease;
+          animation-fill-mode: forwards;
+          display: inline-block;
+          margin-left: 19%;
+        }
+      }
+
+      .fr {
+        color: #fff;
+      }
+
+      .fr:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .tw {
+        color: #fff;
+      }
+
+      .tw:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .tr {
+        color: #fff;
+      }
+
+      .tr:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      .f4 {
+        color: #fff;
+      }
+
+      .f4:hover {
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #420f40,
+            0 0 40px #e60073, 0 0 50px #420f40, 0 0 60px #420f40,
+            0 0 70px #420f40;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+
+
+
+      }
+
+      
+      .gradient {
+        width: 100%;
+        height: 300px;
+        background-image: linear-gradient(to right, red, yellow, green);
+        animation: wave 5s ease-in-out infinite;
+      }
+      
+      @keyframes wave {
+        0% {
+          background-position: 0 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0 50%;
+        }
+      }
+    </style>
+</head>
+<body>
+    <section class="banner">
+    <img src="Picsart_22-10-30_15-00-50-933.png" alt="" class="logo" />
+
+
+    <div class="card">
+        <div class="front">
+          <p>Mетаекспресіонізм - це</p>
+        </div>
+        <div class="back">
+          <p>
+            “Маніфестація різних сфер творчості. Наші маніфести у всіляких
+            дисциплінах мистецтва грунтуватимуться на цьому матеріалі.”
+          </p>
+        </div>
+      </div>
+
+      <div class="card2">
+        <div class="front">
+          <p>Перше</p>
+        </div>
+        <div class="back">
+          <p>
+            “Культурне просування, що будується на протесті, конфлікті з
+            попкультурою і агресивним маркетингом.”
+          </p>
+        </div>
+      </div>
+
+      <div class="card3">
+        <div class="front">
+          <p>Друге</p>
+        </div>
+        <div class="back">
+          <p>
+            Метаекспресіонізм - творча течія в мистецтві, що охоплює такі
+            дисципліни як: фотографія, музика, література, кіно, спрямоване на
+            вираження суб'єктивних переживань автора, просування зачіпаних
+            творцем тем, шляхів сприйняття та усвідомлення, психологізацію акту
+            творчості, вихід з екзистенційної кризи шляхом творчо-долаючої дії
+          </p>
+        </div>
+      </div>
+
+     
+      
+    </section>
+</body>
+</html>
